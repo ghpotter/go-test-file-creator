@@ -12,6 +12,9 @@
 	],
 	"activationEvents": [
 		"onCommand:extension.goTestFileCreator",
+		"onCommand:extension.goTestFileCreatorShortcut",
+		"onCommand:extension.goTestFileCreatorAll",
+		"onCommand:extension.goTestFileCreatorAllShortcut",
 		"onView:explorer"
 	],
 	"main": "./out/extension.js",
@@ -20,6 +23,18 @@
 			{
 				"command": "extension.goTestFileCreator",
 				"title": "Go Test File Creator"
+			},
+			{
+				"command": "extension.goTestFileCreatorShortcut",
+				"title": "Go Test File Creator Shortcut"
+			},
+			{
+				"command": "extension.goTestFileCreatorAll",
+				"title": "Go Test File Creator All"
+			},
+			{
+				"command": "extension.goTestFileCreatorAllShortcut",
+				"title": "Go Test File Creator All"
 			}
 		],
 		"menus": {
@@ -27,15 +42,25 @@
 				{
 					"command": "extension.goTestFileCreator",
 					"when": "resourceLangId == go"
+				},
+				{
+					"command": "extension.goTestFileCreatorAll"
 				}
 			]
 		},
 		"keybindings": [
 			{
-				"command": "extension.goTestFileCreator",
+				"command": "extension.goTestFileCreatorShortcut",
 				"key": "alt+t",
 				"mac": "alt+t",
-				"when": "editorTextFocus"
+				"when": "editorFocus && editorLangId == go"
+			},
+			{
+				
+				"command": "extension.goTestFileCreatorAllShortcut",
+				"key": "ctrl+alt+t",
+				"mac": "ctrl+alt+t",
+				"when": "editorFocus && editorLangId == go"
 			}
 		]
 	},
